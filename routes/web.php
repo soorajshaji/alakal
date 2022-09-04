@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\adminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +13,12 @@ use App\Http\Controllers\Admin\adminController;
 |
 */
 
-Route::get('/formIndex', [adminController::class,'formIndex']);
-Route::get('/formprint/{id}', [adminController::class,'formprint']);
-Route::post('/saveCustomer', [adminController::class,'saveCustomer']);
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', [adminController::class,'formList']);
-Route::get('/formListEdit/{id}', [adminController::class,'formListEdit']);
-Route::get('/formListDelete/{id}', [adminController::class,'formListDelete']);
-Route::post('/formListUpdate/{id}', [adminController::class,'formListUpdate']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/formFullView/{id}', [adminController::class,'formFullView']);
+require __DIR__.'/auth.php';
