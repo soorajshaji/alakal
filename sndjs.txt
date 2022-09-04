@@ -1,0 +1,14 @@
+D:\projects\alakal>heroku addons:create heroku-postgresql:hobby-dev
+Creating heroku-postgresql:hobby-dev on ⬢ vast-citadel-16115... free
+Database has been created and is available
+ ! This database is empty. If upgrading, you can transfer
+ ! data from another database with pg:copy
+Created postgresql-fitted-33800 as DATABASE_URL
+Use heroku addons:docs heroku-postgresql to view documentation
+
+D:\projects\alakal>heroku config
+=== vast-citadel-16115 Config Vars
+APP_KEY:      66vjKRNnpkgcj9k6NYbBl9h0vvlys+8T7vf8ufutea8=
+DATABASE_URL: postgres://qiicmpfjdotsdj:ab2e46177d587f3577ed0cae8592d5e6014fcde6609f063a4847b047dd9b5cd5@ec2-34-227-135-211.compute-1.amazonaws.com:5432/di1ni6s32r3q6
+
+D:\projects\alakal>
