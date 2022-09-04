@@ -119,7 +119,7 @@ return [
     |
     */
 
-    'key' => env('66vjKRNnpkgcj9k6NYbBl9h0vvlys+8T7vf8ufutea8='),
+    'key' => env('base64:66vjKRNnpkgcj9k6NYbBl9h0vvlys+8T7vf8ufutea8='),
 
     'cipher' => 'AES-256-CBC',
 
