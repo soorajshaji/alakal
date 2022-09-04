@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://vast-citadel-16115.herokuapp.com/'),
 
     'asset_url' => env('ASSET_URL', null),
 
