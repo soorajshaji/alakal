@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://vast-citadel-16115.herokuapp.com/'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -119,7 +119,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('66vjKRNnpkgcj9k6NYbBl9h0vvlys+8T7vf8ufutea8='),
 
     'cipher' => 'AES-256-CBC',
 
