@@ -7,6 +7,16 @@
    width: 300px;
    padding: 10px;
    }
+
+   @media only screen and (max-width: 600px) {
+      .mobile_view_mid{
+      margin-top: 80px;
+      margin-bottom: -80px;
+      width: 100px;
+   }
+}
+
+
 </style>
 
 
@@ -15,7 +25,7 @@
       @csrf
       <div class="card-header">
          <h4>Customer Details</h4>
-         <div class="input-group right">
+         <div class="input-group right mobile_view_mid" >
             <label>M.ID No</label>
             <input name="mid" type="text" class="form-control" required="">
          </div>

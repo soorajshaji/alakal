@@ -26,6 +26,20 @@
   <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
   <link rel='shortcut icon' type='image/x-icon' href='{{asset('assets/logo/logo.png')}}' />
 </head>
+<style>
+  @media only screen and (min-width: 992px) {
+    .mobile_view{
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .mobile_view{
+      display: none;
+    }
+  }
+
+
+</style>
 
 <body>
   <div class="loader"></div>
@@ -35,8 +49,8 @@
       <nav class="navbar navbar-expand-lg main-navbar sticky">
         <div class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
-            <li><!--<a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
-									collapse-btn"> <i data-feather="align-justify"></i></a>--></li>
+            <li class="mobile_view"><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+									collapse-btn"> <i data-feather="align-justify"></i></a></li>
                   
             <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
                 <i data-feather="maximize"></i>

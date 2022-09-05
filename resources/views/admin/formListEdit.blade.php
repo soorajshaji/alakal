@@ -9,6 +9,12 @@
   width: 300px;
   padding: 10px;
 }
+@media only screen and (max-width: 600px) {
+      .mobile_view_mid{
+      margin-top: 80px;
+      width: 100px;
+   }
+}
 </style>
 
 <div class="card">
@@ -16,7 +22,7 @@
     @csrf
       <div class="card-header">
         <h4>Customer Details</h4>
-        <div class="input-group right">
+        <div class="input-group right mobile_view_mid">
             <label>M.ID No</label>
                 <input value="{{$customerDetails->mid}}" name="mid" type="text" class="form-control" required="">
                 
@@ -153,11 +159,11 @@
                  <div class="row">
                      <div class="col-md-6">
                          <label>Start Date</label>
-                         <input value="{{$customerDetails->start_date}}"  name="start_date" type="text" class="form-control">
+                         <input value="{{$customerDetails->start_date}}"  name="start_date" type="text" class="form-control datepicker">
                      </div>
                      <div class="col-md-6">
                          <label>End Date</label>
-                         <input value="{{$customerDetails->end_date}}" name="end_date" type="text" class="form-control">
+                         <input value="{{$customerDetails->end_date}}" name="end_date" type="text" class="form-control datepicker">
                      </div>
                  </div>
               </div>
