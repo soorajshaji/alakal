@@ -8,6 +8,7 @@
             <div class="card">
               <div class="card-header">
                 <h4>Customer List</h4>
+                <div class="button"> <a href="{{url('formIndex')}}" class="btn btn-primary ">Add</a></div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

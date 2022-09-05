@@ -37,15 +37,15 @@
             <div class="col-md-6">
                 <label>Your Name</label>
                 <div class="input-group">
-                                <select name="name_prefix" class="input-group-text" id="inputGroupSelect05">
-                                    <option value="{{$first = strtok($customerDetails->name, '.')}}.">{{$first = strtok($customerDetails->name, '.')}}</option>
+                                <!--<select name="name_prefix" class="input-group-text" id="inputGroupSelect05">
+                                    <option value="</option>
                                     <option value="Mr."> Mr.</option>
                                     <option value="Mrs."> Mrs.</option>
                                     <option value="Miss."> Miss.</option>
                                     <option value="Ms."> Ms.</option>
                                     <option value="Dr."> Dr.</option>
-                                  </select>
-                                  <input value="{{str_replace(array('Mr.','Mrs.','Miss.','Ms.','Dr.'), '', $customerDetails->name)}}" name="name" type="text" class="form-control" required="">
+                                  </select>-->
+                                  <input value="{{$customerDetails->name}}" name="name" type="text" class="form-control" required="">
                                   <div class="invalid-feedback">
                                     What's your name?
                                   </div>
@@ -159,11 +159,13 @@
                  <div class="row">
                      <div class="col-md-6">
                          <label>Start Date</label>
-                         <input value="{{$customerDetails->start_date}}"  name="start_date" type="text" class="form-control datepicker">
+                         
+                          <?php $date = json_decode($customerDetails->contribution); ?>
+                         <input value="{{$date[0]}}"  name="start_date" type="text" class="form-control datepicker">
                      </div>
                      <div class="col-md-6">
                          <label>End Date</label>
-                         <input value="{{$customerDetails->end_date}}" name="end_date" type="text" class="form-control datepicker">
+                         <input value="{{$date[1]}}" name="end_date" type="text" class="form-control datepicker">
                      </div>
                  </div>
               </div>
@@ -209,6 +211,8 @@
 
         </div>
         <?php
+        
+        
         $customer=json_decode($customerDetails->family_members); 
         $customer1=$customerDetails->family_members; 
         $length =0;

@@ -35,13 +35,13 @@
             <div class="col-md-6">
                <label>Your Name</label>
                <div class="input-group">
-                  <select name="name_prefix" class="input-group-text" id="inputGroupSelect05">
+                  <!--<select name="name_prefix" class="input-group-text" id="inputGroupSelect05">
                      <option value="Mr."> Mr.</option>
                      <option value="Mrs."> Mrs.</option>
                      <option value="Miss"> Miss</option>
                      <option value="Ms."> Ms.</option>
                      <option value="Dr."> Dr.</option>
-                  </select>
+                  </select>-->
                   <input name="name" type="text" class="form-control" required="">
                   <div class="invalid-feedback">
                      What's your name?
@@ -147,7 +147,7 @@
                      </div>
                      <div class="col-md-6">
                         <label>End Date</label>
-                        <input name="end_date" type="text" class="form-control datepicker">
+                        <input value="23-03-12" name="end_date" type="text" class="form-control datepicker">
                      </div>
                   </div>
                </div>

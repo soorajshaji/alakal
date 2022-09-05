@@ -146,7 +146,8 @@
                     <br>
                     <div class="row" style="margin-bottom: 40px;">
                       <div class="col-md-4">
-                        <div class="incfont" style="color:black;">Date:- <span class="incfont1">{{$customerDetails->contribution}}</span>
+                        <?php $date = json_decode($customerDetails->contribution); ?>
+                        <div class="incfont" style="color:black;">Date:- <span class="incfont1">{{$date[0]}} &nbsp;  to  &nbsp;  {{$date[1]}}</span>
                         </div>
                       </div>
                       <div class="col-md-4">

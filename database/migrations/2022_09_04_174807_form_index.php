@@ -16,8 +16,8 @@ class FormIndex extends Migration
         Schema::create('customer_details', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();;
-            $table->integer('mid')->nullable();;
-            $table->integer('age')->nullable();;
+            $table->string('mid')->nullable();;
+            $table->string('age')->nullable();;
             $table->string('gender')->nullable();;
             $table->string('phone_number')->nullable();;
             $table->string('whatsapp_number')->nullable();;

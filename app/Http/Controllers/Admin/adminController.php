@@ -63,7 +63,7 @@ class adminController extends Controller
         $customer->month_year = $request->input('month_year');
         $start_date = $request->input('start_date');
         $end_date = $request->input('end_date');
-        $customer->contribution = $start_date. ' to ' .$end_date;
+        $customer->contribution = json_encode(array($start_date,$end_date));
         $customer->donation = $request->input('donation');
         $customer->details = $request->input('details');
         $customer->description = $request->input('description');
@@ -99,7 +99,7 @@ class adminController extends Controller
         $customer->month_year = $request->input('month_year');
         $start_date = $request->input('start_date');
         $end_date = $request->input('end_date');
-        $customer->contribution = $start_date. ' to ' .$end_date;
+        $customer->contribution = json_encode(array($start_date,$end_date));
         $customer->donation = $request->input('donation');
         $customer->details = $request->input('details');
         $customer->description = $request->input('description');
