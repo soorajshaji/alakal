@@ -153,11 +153,11 @@
                  <div class="row">
                      <div class="col-md-6">
                          <label>Start Date</label>
-                         <input value="{{$customerDetails->start_date}}"  name="start_date" type="text" class="form-control datepicker">
+                         <input value="{{$customerDetails->start_date}}"  name="start_date" type="text" class="form-control">
                      </div>
                      <div class="col-md-6">
                          <label>End Date</label>
-                         <input value="{{$customerDetails->end_date}}" name="end_date" type="text" class="form-control datepicker">
+                         <input value="{{$customerDetails->end_date}}" name="end_date" type="text" class="form-control">
                      </div>
                  </div>
               </div>
