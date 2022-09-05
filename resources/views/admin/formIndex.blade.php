@@ -147,7 +147,7 @@
                      </div>
                      <div class="col-md-6">
                         <label>End Date</label>
-                        <input value="23-03-12" name="end_date" type="text" class="form-control datepicker">
+                        <input name="end_date" type="text" class="form-control datepicker">
                      </div>
                   </div>
                </div>
