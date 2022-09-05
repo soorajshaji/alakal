@@ -24,6 +24,10 @@
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
   <link rel='shortcut icon' type='image/x-icon' href='{{asset('assets/img/favicon.ico')}}' />
+
+  <style>
+    
+  </style>
 </head>
 
 <body onload="window.print()">
@@ -162,8 +166,12 @@
                     </div>
           
                     <div class="row" style="margin-bottom: 80px;">
-                      <div class="col-md-12">
-                        <div class="incfont" style="color:black;">Parish Name:- <span class="incfont1">{{$customerDetails->details}}</span>
+                      <div class="col-md-6">
+                        <div class="incfont" style="color:black;">Parish in India:- <span class="incfont1">{{$customerDetails->details}}</span>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="incfont" style="color:black;">Parish in Uk:- <span class="incfont1">{{$customerDetails->details2}}</span>
                         </div>
                       </div>
                     

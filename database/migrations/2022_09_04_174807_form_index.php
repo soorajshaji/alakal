@@ -26,7 +26,8 @@ class FormIndex extends Migration
             $table->string('month_year')->nullable();;
             $table->string('contribution')->nullable();;
             $table->string('donation')->nullable();;
-            $table->text('details')->nullable();;
+            $table->text('details')->nullable();
+            $table->text('details2')->nullable();
             $table->text('description')->nullable();;
         });
     }

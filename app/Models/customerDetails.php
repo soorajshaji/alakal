@@ -9,6 +9,6 @@ class customerDetails extends Model
 {
     use HasFactory;
     protected $table = 'customer_details';
-    protected $fillable = ['name','mid','age','gender','phone_number','whatsapp_number','email','family_members','month_year','contribution','donation','details','description'];
+    protected $fillable = ['name','mid','age','gender','phone_number','whatsapp_number','email','family_members','month_year','contribution','donation','details','details2','description'];
     public $timestamps = false;
 }

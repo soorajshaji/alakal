@@ -177,8 +177,17 @@
          <div class="row">
             <div class="col-md-6">
                <div class="form-group mb-0">
-                  <label>Parish Name</label>
+                  <label>Parish in India</label>
                   <textarea name="details" class="form-control" required=""></textarea>
+                  <div class="invalid-feedback">
+                     Enter details
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="form-group mb-0">
+                  <label>Parish in Uk</label>
+                  <textarea name="details2" class="form-control" required=""></textarea>
                   <div class="invalid-feedback">
                      Enter details
                   </div>

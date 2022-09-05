@@ -66,6 +66,7 @@ class adminController extends Controller
         $customer->contribution = json_encode(array($start_date,$end_date));
         $customer->donation = $request->input('donation');
         $customer->details = $request->input('details');
+        $customer->details2 = $request->input('details2');
         $customer->description = $request->input('description');
         $customer->save();
         return redirect('/');
@@ -102,6 +103,7 @@ class adminController extends Controller
         $customer->contribution = json_encode(array($start_date,$end_date));
         $customer->donation = $request->input('donation');
         $customer->details = $request->input('details');
+        $customer->details2 = $request->input('details2');
         $customer->description = $request->input('description');
         $customer->save();
         return redirect('/');
