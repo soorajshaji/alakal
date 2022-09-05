@@ -1,2 +1,2 @@
-username:alakal@gmail.com
-password:XVDyqfASJAkW733
+username: alakal@gmail.com
+password: XVDyqfASJAkW733
