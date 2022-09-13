@@ -1,12 +1,7 @@
 @extends('layouts.homeLayouts')
 @section('formIndex')
 <style>
-   .right {
-   position: absolute;
-   right: 0px;
-   width: 300px;
-   padding: 10px;
-   }
+   
 
    @media only screen and (max-width: 600px) {
       .mobile_view_mid{
@@ -25,13 +20,20 @@
       @csrf
       <div class="card-header">
          <h4>Customer Details</h4>
-         <div class="input-group right mobile_view_mid" >
-            <label>M.ID No</label>
-            <input name="mid" id="mid" type="text" class="form-control" required="">
-         </div>
+
       </div>
       <div class="card-body">
-         <div class="row" style="margin-top: 80px;">
+         <div class="row" style="margin-top: 40px;margin-bottom: 20px;">
+            <div class="col-md-6">
+               <label>M.ID No</label>
+               <div class="input-group" >
+                  
+                  <input name="mid" id="mid" type="text" class="form-control" required="">
+               </div>
+            </div>
+         </div>
+         <div class="row" >
+            
             <div class="col-md-6">
                <label>Your Name</label>
                <div class="input-group">
