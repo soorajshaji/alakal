@@ -41,10 +41,17 @@
               <div class="incfont" style="color:black;">Mobile Number:- <span class="incfont1">{{$customerDetails->phone_number}}</span>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="incfont" style="color:black;">Whatsapp:- <span class="incfont1">{{$customerDetails->whatsapp_number}}</span>
+            @php
+
+            if ($customerDetails->whatsapp_number !=null) {
+              echo'<div class="col-md-4">
+              <div class="incfont" style="color:black;">Whatsapp:- <span class="incfont1">';echo$customerDetails->whatsapp_number;echo'</span>
               </div>
-            </div>
+            </div>';
+            }
+                
+            @endphp
+
             <div class="col-md-4">
               <div class="incfont" style="color:black;">Email Id:- <span class="incfont1">{{$customerDetails->email}}</span>
               </div>
@@ -119,34 +126,60 @@
             </div>
           </div>
 
+          <br>
+          <br>
+          <div class="author-box-name align-center" style="font-size: 22px;margin-top:80px;margin-bottom:20px;">
+            <a href="#">Parish</a>
+          </div>
+          <br><br>
+
+          <div class="row" style="margin-bottom: 80px;">
+            <div class="col-md-6">
+              <div class="incfont" style="color:black;">Parish in India:- <span class="incfont1">{{$customerDetails->details}}</span>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <div class="incfont" style="color:black;">Parish in Uk:- <span class="incfont1">{{$customerDetails->details2}}</span>
+              </div>
+              
+            </div>
+          
+          </div>
+
           <div class="row">
             <div class="col-md-12">
               <div class="row">
                   <div class="col-md-12 align-center">
                     <span class="incfont1"> 
-                      <?php
-                              $customer=json_decode($customerDetails->contribution); 
 
-                              for ($j=0; $j < count($customer[0]); $j++) { 
-                                echo '<div class="author-box-name align-center" style="font-size: 22px;margin-top:80px;margin-bottom:20px;">
-                                  <a href="#">'; echo $customer[0][$j]; echo' Contribution</a>
-                                </div>';
-                                echo ' 
-                                        <div class="table-responsive">';
-                              echo '
-                                          <table class="table table-striped" >';
-                              echo '<thead>
+                                <div class="author-box-name align-center" style="font-size: 22px;margin-top:20px;margin-bottom:20px;">
+                                  <a href="#"> Contribution</a>
+                                </div>
+                               
+                                        <div class="table-responsive">
+                              
+                                          <table class="table table-striped" >
+                              <thead>
                                             <tr>
+                                              <th>Monthly/Yearly</th>
                                               <th>Date</th>
                                               <th>Pay Date</th>
                                               <th>Donation Amount</th>
                                             </tr>
-                                          </thead>';
-                                  echo "
-                                            <tbody>";
-                              
+                                          </thead>
+                                  
+                                            <tbody>
+                                <?php
+                                  $customer=json_decode($customerDetails->contribution); 
+                
+                                  for ($j=0; $j < count($customer[0]); $j++) { 
                                   echo " <tr>";
-                                
+                                  echo "<td>"; 
+                                  
+                                    echo $customer[0][$j];
+                                    
+                                  echo "</td>";
                                 
                                   echo "<td>"; 
                                   
@@ -169,18 +202,23 @@
                                   //
                                 
                                 echo "</tr>";
-                            
-                              echo "</tbody>";
-                              echo "</table>";
-                              echo " </div>";
-
-                              if ($customer[5][$j] != null) {
-                                echo '<div class="incfont" style="color:black;">Description:- <span class="incfont1">'; echo $customer[5][$j]; echo'</span>
-                                  </div>';
+                                if ($customer[5][$j] != null) {
+                                echo '<tr >';
+                                  
+                                echo '<td colspan="4" class="justify-center"><div class="incfont" style="color:black;padding-top:20px;padding-bottom:20px;">Description:- <span class="">'; echo $customer[5][$j]; echo'</span>
+                                  </div> </td>';
+                             
+                                echo "</tr>";
                               }
-                              }
+                            }
 
-                              ?> 
+                            ?> 
+                              </tbody>
+                              </table>
+                              </div>
+
+
+
                       </span>
                   </div>
                 </div>
@@ -221,26 +259,7 @@
               }*/
           @endphp
 
-          <br>
-          <br>
-          <div class="author-box-name align-center" style="font-size: 22px;margin-top:80px;margin-bottom:20px;">
-            <a href="#">Parish</a>
-          </div>
-          <br><br>
 
-          <div class="row" style="margin-bottom: 80px;">
-            <div class="col-md-6">
-              <div class="incfont" style="color:black;">Parish in India:- <span class="incfont1">{{$customerDetails->details}}</span>
-              </div>
-
-            </div>
-            <div class="col-md-6">
-              <div class="incfont" style="color:black;">Parish in Uk:- <span class="incfont1">{{$customerDetails->details2}}</span>
-              </div>
-              
-            </div>
-          
-          </div>
           <div class="float-right mt-sm-0 mt-3">
             <!--<button onclick="window.print();" class="noPrint">
                         Print Me

@@ -94,7 +94,7 @@
                            <img src="https://img.icons8.com/material-outlined/24/000000/whatsapp--v1.png"/>
                         </div>
                      </div>
-                     <input name="whatsapp_number" id="whatsapp_number" type="text" class="form-control phone-number" required="">
+                     <input name="whatsapp_number" id="whatsapp_number" type="text" class="form-control phone-number">
                   </div>
                </div>
             </div>
@@ -250,18 +250,35 @@
        });
 
        $('#pro_button').click(function(){
-         
          if ($('#mid').val() != "" 
                && $('#name').val() != ""
                && $('#age').val() != "" 
                && $('#phone_number').val() != "" 
-               && $('#whatsapp_number').val() != "" 
-               && $('#family_name').val() != "" 
-               && $('#family_relationship').val() != "" 
                && $('#donation').val() != ""
                && $('#details').val() != ""
                && $('#details2').val() != "") {
-            $("#pro_button").addClass("btn-progress");
+                  var h = 0;
+                  var collection = document.getElementsByName("family_name[]");
+                  var collection2 = document.getElementsByName("family_relationship[]");
+
+
+                  for (var i = 0; i < collection.length; i++) {
+            
+                     if (collection[i].value == "") {
+                        h++;
+                     }
+                  }
+                  if (h == 0) {
+                     for (var i = 0; i < collection2.length; i++) {
+            
+                        if (collection2[i].value == "") {
+                           h++;
+                        }
+                     }
+                  }
+                  if (h == 0) {
+                     $("#pro_button").addClass("btn-progress");
+                  }
          } else {
 
          }

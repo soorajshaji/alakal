@@ -102,7 +102,7 @@
                             <img src="https://img.icons8.com/material-outlined/24/000000/whatsapp--v1.png"/>
                         </div>
                       </div>
-                      <input value="{{$customerDetails->whatsapp_number}}" name="whatsapp_number" type="text" class="form-control phone-number" required="">
+                      <input value="{{$customerDetails->whatsapp_number}}" name="whatsapp_number" type="text" class="form-control phone-number">
                     </div>
                   </div>
             </div>
@@ -275,15 +275,21 @@
            if(x < maxField){ 
                x++; //Increment field counter
                
-               $(wrapper).append('<div id="'+a+'" style="margin-top:20px;margin-bottom:20px;">  <div class="row" style="margin-top:40px;"> <div class="col-md-4"> <div class="form-group"> <label>Name</label> <div class="input-group"> <input required="" name="family_name[]" id="family_name" type="text" class="form-control"> </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Relationship</label> <input name="family_relationship[]" id="family_relationship" type="text" class="form-control"> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Phone Number</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-phone"></i> </div> </div> <input name="family_number[]" type="text" class="form-control phone-number"> </div> </div> </div> </div> <div class="row"> <div class="col-md-4"> <div class="form-group"> <label>Email Id</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-envelope"></i> </div> </div> <input name="family_email[]" type="text" class="form-control" > </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Alakal Member</label> <select name="alakal_member[]" class="input-group-text" id="inputGroupSelect05"> <option value="Yes"> Yes</option> <option value="No"> No</option> </select> </div> </div> <div class="col-md-4" style="margin-top:35px;"> <div class="button remove_button"> <a href="javascript:void(0);" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a> </div> </div> </div></div>'); //Add field html
+               $(wrapper).append('<div id="'+a+'" style="margin-top:20px;margin-bottom:20px;">  <div class="row" style="margin-top:40px;"> <div class="col-md-4"> <div class="form-group"> <label>Name</label> <div class="input-group"> <input required="" name="family_name[]" id="family_name" type="text" class="form-control"> </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Relationship</label> <input name="family_relationship[]" id="family_relationship" required="" type="text" class="form-control"> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Phone Number</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-phone"></i> </div> </div> <input name="family_number[]" type="text" class="form-control phone-number"> </div> </div> </div> </div> <div class="row"> <div class="col-md-4"> <div class="form-group"> <label>Email Id</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-envelope"></i> </div> </div> <input name="family_email[]" type="text" class="form-control" > </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Alakal Member</label> <select name="alakal_member[]" class="input-group-text" id="inputGroupSelect05"> <option value="Yes"> Yes</option> <option value="No"> No</option> </select> </div> </div> <div class="col-md-4" style="margin-top:35px;"> <div class="button remove_button"> <a href="javascript:void(0);" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a> </div> </div> </div></div>'); //Add field html
                a = a+1;
            }
        });
        //Once add button is clicked
 
        for(var i =0;i<z;i++){
+
+              for(var j=0;j<5;j++){
+                if(customer[j][i] == null){
+                  customer[j][i] = "";
+                }
+              }
               
-              $(wrapper).append('<div id="'+a+'" style="margin-top:20px;margin-bottom:20px;">  <div class="row" style="margin-top:40px;"> <div class="col-md-4"> <div class="form-group"> <label>Name</label> <div class="input-group"> <input name="family_name[]" id="family_name" value="'+customer[0][i]+'" type="text" class="form-control"> </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Relationship</label> <input name="family_relationship[]" id="family_relationship" value="'+customer[1][i]+'" type="text" class="form-control"> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Phone Number</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-phone"></i> </div> </div> <input value="'+customer[2][i]+'" name="family_number[]" type="text" class="form-control phone-number"> </div> </div> </div> </div> <div class="row"> <div class="col-md-4"> <div class="form-group"> <label>Email Id</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-envelope"></i> </div> </div> <input value="'+customer[3][i]+'" name="family_email[]" type="text" class="form-control" > </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Alakal Member</label> <select name="alakal_member[]" class="input-group-text" id="inputGroupSelect05"><option value="'+customer[4][i]+'"> '+customer[4][i]+'</option> <option value="Yes"> Yes</option> <option value="No"> No</option> </select> </div> </div> <div class="col-md-4" style="margin-top:35px;"> <div class="button remove_button"> <a href="javascript:void(0);" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a> </div> </div> </div></div>'); //Add field html
+              $(wrapper).append('<div id="'+a+'" style="margin-top:20px;margin-bottom:20px;">  <div class="row" style="margin-top:40px;"> <div class="col-md-4"> <div class="form-group"> <label>Name</label> <div class="input-group"> <input name="family_name[]" id="family_name" value="'+customer[0][i]+'" type="text" class="form-control"> </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Relationship</label> <input name="family_relationship[]" id="family_relationship" value="'+customer[1][i]+'" type="text" class="form-control" required=""> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Phone Number</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-phone"></i> </div> </div> <input value="'+customer[2][i]+'" name="family_number[]" type="text" class="form-control phone-number"> </div> </div> </div> </div> <div class="row"> <div class="col-md-4"> <div class="form-group"> <label>Email Id</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-envelope"></i> </div> </div> <input value="'+customer[3][i]+'" name="family_email[]" type="text" class="form-control" > </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Alakal Member</label> <select name="alakal_member[]" class="input-group-text" id="inputGroupSelect05"><option value="'+customer[4][i]+'"> '+customer[4][i]+'</option> <option value="Yes"> Yes</option> <option value="No"> No</option> </select> </div> </div> <div class="col-md-4" style="margin-top:35px;"> <div class="button remove_button"> <a href="javascript:void(0);" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a> </div> </div> </div></div>'); //Add field html
               x++;
               a = a+1;
            }
@@ -296,19 +302,38 @@
        });
 
        $('#pro_button').click(function(){
-         
          if ($('#mid').val() != "" 
                && $('#name').val() != ""
                && $('#age').val() != "" 
                && $('#phone_number').val() != "" 
-               && $('#whatsapp_number').val() != "" 
-               && $('#family_name').val() != "" 
-               && $('#family_relationship').val() != "" 
                && $('#donation').val() != ""
                && $('#details').val() != ""
                && $('#details2').val() != "") {
-            $("#pro_button").addClass("btn-progress");
-         } 
+                  var h = 0;
+                  var collection = document.getElementsByName("family_name[]");
+                  var collection2 = document.getElementsByName("family_relationship[]");
+
+
+                  for (var i = 0; i < collection.length; i++) {
+            
+                     if (collection[i].value == "") {
+                        h++;
+                     }
+                  }
+                  if (h == 0) {
+                     for (var i = 0; i < collection2.length; i++) {
+            
+                        if (collection2[i].value == "") {
+                           h++;
+                        }
+                     }
+                  }
+                  if (h == 0) {
+                     $("#pro_button").addClass("btn-progress");
+                  }
+         } else {
+
+         }
          
       });
    });
