@@ -284,8 +284,9 @@
        for(var i =0;i<z;i++){
 
               for(var j=0;j<5;j++){
-                if(customer[j][i] == ""){
-                  customer[j][i] = "N/A";
+                if(customer[j][i] == null){
+                  
+                  customer[j][i] = "";
                 }
               }
               
