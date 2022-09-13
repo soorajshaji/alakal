@@ -30,6 +30,8 @@ Route::get('/', [adminController::class,'formList'])->middleware(['auth'])->name
 Route::get('/formListEdit/{id}', [adminController::class,'formListEdit'])->middleware(['auth'])->name('dashboard');
 Route::get('/formListDelete/{id}', [adminController::class,'formListDelete'])->middleware(['auth'])->name('dashboard');
 Route::post('/formListUpdate/{id}', [adminController::class,'formListUpdate'])->middleware(['auth'])->name('dashboard');
+Route::post('/saveContribution/{id}', [adminController::class,'saveContribution'])->middleware(['auth'])->name('deleteRecord','dashboard');
 
 Route::get('/formFullView/{id}', [adminController::class,'formFullView'])->middleware(['auth'])->name('dashboard');
 require __DIR__.'/auth.php';
+

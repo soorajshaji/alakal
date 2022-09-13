@@ -143,28 +143,112 @@
                           </div>
                       </div>
                     </div>
-                    <div class="author-box-name align-center" style="font-size: 22px;margin-top:80px;margin-bottom:20px;">
-                      <a href="#">{{$customerDetails->month_year}} Contribution</a>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="row" style="margin-bottom: 40px;">
-                      <div class="col-md-4">
-                        <?php $date = json_decode($customerDetails->contribution); ?>
-                        <div class="incfont" style="color:black;">Date:- <span class="incfont1">{{$date[0]}} &nbsp;  to  &nbsp;  {{$date[1]}}</span>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="incfont" style="color:black;">Donation Amount:- <span class="incfont1">{{$customerDetails->donation}}</span>
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="incfont" style="color:black;">Description:- <span class="incfont1">{{$customerDetails->description}}</span>
-                        </div>
-                      </div>
 
-                    </div>
+                    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 align-center">
+                              <span class="incfont1"> 
+                                <?php
+                                        $customer=json_decode($customerDetails->contribution); 
           
+                                        for ($j=0; $j < count($customer[0]); $j++) { 
+                                          echo '<div class="author-box-name align-center" style="font-size: 22px;margin-top:80px;margin-bottom:20px;">
+                                            <a href="#">'; echo $customer[0][$j]; echo' Contribution</a>
+                                          </div>';
+                                          echo ' 
+                                                  <div class="table-responsive">';
+                                        echo '
+                                                    <table class="table table-striped" >';
+                                        echo '<thead>
+                                                      <tr>
+                                                        <th>Date</th>
+                                                        <th>Pay Date</th>
+                                                        <th>Donation Amount</th>
+                                                      </tr>
+                                                    </thead>';
+                                            echo "
+                                                      <tbody>";
+                                        
+                                            echo " <tr>";
+                                          
+                                          
+                                            echo "<td>"; 
+                                            
+                                              echo $customer[1][$j]; echo '&nbsp;  to  &nbsp;'; echo $customer[2][$j];
+                                              
+                                            echo "</td>";
+
+                                            echo "<td>"; 
+                                            
+                                            echo $customer[3][$j];
+                                            
+                                          echo "</td>";
+
+                                          echo "<td>"; 
+                                            
+                                            echo $customer[4][$j];
+                                            
+                                          echo "</td>";
+                                            
+                                            //
+                                          
+                                          echo "</tr>";
+                                      
+                                        echo "</tbody>";
+                                        echo "</table>";
+                                        echo " </div>";
+
+                                        if ($customer[5][$j] != null) {
+                                          echo '<div class="incfont" style="color:black;">Description:- <span class="incfont1">'; echo $customer[5][$j]; echo'</span>
+                                            </div>';
+                                        }
+                                        }
+          
+                                        ?> 
+                                </span>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                   @php
+                   /*$customer=json_decode($customerDetails->contribution); 
+
+                        for ($i=0; $i < count($customer[0]); $i++) { 
+                          
+                            echo '<div class="author-box-name align-center" style="font-size: 22px;margin-top:80px;margin-bottom:20px;">
+                              <a href="#">'; echo $customer[0][$i]; echo' Contribution</a>
+                            </div>';
+          
+                            echo '<div class="row" style="margin-bottom: 40px;">
+                              <div class="col-md-4">
+                                <div class="incfont" style="color:black;">Date:- <span class="incfont1">';echo $customer[1][$i]; echo '&nbsp;  to  &nbsp;'; echo $customer[2][$i]; echo'</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="incfont" style="color:black;">Pay Date:- <span class="incfont1">'; echo $customer[3][$i]; echo'</span>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="incfont" style="color:black;">Donation Amount:- <span class="incfont1">'; echo $customer[4][$i]; echo'</span>
+                                </div>
+                              </div>
+          
+                              
+                            </div>';
+                            if ($customer[5][$i] != null) {
+                              echo '<div class="incfont" style="color:black;">Description:- <span class="incfont1">'; echo $customer[5][$i]; echo'</span>
+                                </div>';
+                            }
+                          
+                        }*/
+                    @endphp
+                    <br><br>
+                    <div class="author-box-name align-center" style="font-size: 22px;margin-top:80px;margin-bottom:20px;">
+                      <a href="#">Parish</a>
+                    </div>
+                    <br><br>
                     <div class="row" style="margin-bottom: 80px;">
                       <div class="col-md-6">
                         <div class="incfont" style="color:black;">Parish in India:- <span class="incfont1">{{$customerDetails->details}}</span>

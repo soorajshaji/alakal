@@ -21,13 +21,13 @@
 
 
 <div class="card">
-   <form class="needs-validation" action="{{url('/saveCustomer')}}" novalidate="" method="POST" enctype="multipart/form-data" >
+   <form id="form_button" class="needs-validation" action="{{url('/saveCustomer')}}" novalidate="" method="POST" enctype="multipart/form-data" >
       @csrf
       <div class="card-header">
          <h4>Customer Details</h4>
          <div class="input-group right mobile_view_mid" >
             <label>M.ID No</label>
-            <input name="mid" type="text" class="form-control" required="">
+            <input name="mid" id="mid" type="text" class="form-control" required="">
          </div>
       </div>
       <div class="card-body">
@@ -42,7 +42,7 @@
                      <option value="Ms."> Ms.</option>
                      <option value="Dr."> Dr.</option>
                   </select>-->
-                  <input name="name" type="text" class="form-control" required="">
+                  <input name="name" id="name" type="text" class="form-control" required="">
                   <div class="invalid-feedback">
                      What's your name?
                   </div>
@@ -51,7 +51,7 @@
             <div class="col-md-2">
                <div class="form-group">
                   <label>Your Age</label>
-                  <input name="age" type="text" class="form-control" required="">
+                  <input name="age" id="age" type="text" class="form-control" required="">
                   <div class="invalid-feedback">
                      What's your age?
                   </div>
@@ -60,7 +60,7 @@
             <div class="col-md-4">
                <div class="form-group">
                   <label>Your Gender</label>
-                  <select name="gender" class="input-group-text" id="inputGroupSelect05">
+                  <select name="gender" id="gender" class="input-group-text" id="inputGroupSelect05">
                      <option value="Male"> Male</option>
                      <option value="Female"> Female</option>
                      <option value="Others"> Others</option>
@@ -78,7 +78,7 @@
                            <i class="fas fa-phone"></i>
                         </div>
                      </div>
-                     <input name="phone_number" type="text" class="form-control phone-number" required="">
+                     <input name="phone_number" id="phone_number" type="text" class="form-control phone-number" required="">
                      <div class="invalid-feedback">
                         What's your number?
                      </div>
@@ -94,7 +94,7 @@
                            <img src="https://img.icons8.com/material-outlined/24/000000/whatsapp--v1.png"/>
                         </div>
                      </div>
-                     <input name="whatsapp_number" type="text" class="form-control phone-number" required="">
+                     <input name="whatsapp_number" id="whatsapp_number" type="text" class="form-control phone-number" required="">
                   </div>
                </div>
             </div>
@@ -107,7 +107,7 @@
                            <i class="fas fa-envelope"></i>
                         </div>
                      </div>
-                     <input name="email" type="text" class="form-control " required="">
+                     <input name="email" id="email" type="text" class="form-control " required="">
                   </div>
                </div>
             </div>
@@ -129,25 +129,35 @@
 
 
          <div class="row" style="margin-top:40px;">
-            <div class="col-md-3">
+            <div class="col-md-2">
                <label>Contribution</label>
                <div class="form-group">
-                  <select name="month_year" class="input-group-text" id="inputGroupSelect05">
+                  <select name="month_year[]" class="input-group-text" id="inputGroupSelect05">
                      <option value="Monthly"> Monthly</option>
                      <option value="Yearly"> Yearly</option>
                   </select>
                </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                <div class="form-group">
                   <div class="row">
                      <div class="col-md-6">
                         <label>Start Date</label>
-                        <input  name="start_date" type="text" class="form-control datepicker">
+                        <input  name="start_date[]" id="start_date" type="" class="form-control datepicker">
                      </div>
                      <div class="col-md-6">
                         <label>End Date</label>
-                        <input name="end_date" type="text" class="form-control datepicker">
+                        <input name="end_date[]" id="end_date" type="text" class="form-control datepicker">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="form-group">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <label>Pay Date</label>
+                        <input  name="pay_date[]" id="pay_date" type="" class="form-control datepicker">
                      </div>
                   </div>
                </div>
@@ -158,7 +168,7 @@
             <div class="col-md-6">
                <div class="form-group">
                   <label>Donation</label>
-                  <input name="donation" type="text" class="form-control" required="">
+                  <input name="donation[]" id="donation" type="text" class="form-control" required="">
                   <div class="invalid-feedback">
                      Enter Donation Amount
                   </div>
@@ -166,11 +176,9 @@
             </div>
             <div class="col-md-6">
                <div class="form-group mb-0">
-                  <label>Discription</label>
-                  <textarea name="description" class="form-control" required=""></textarea>
-                  <div class="invalid-feedback">
-                     Enter details
-                  </div>
+                  <label>Description</label>
+                  <textarea name="description[]" class="form-control" ></textarea>
+                  
                </div>
             </div>
          </div>
@@ -178,7 +186,7 @@
             <div class="col-md-6">
                <div class="form-group mb-0">
                   <label>Parish in India</label>
-                  <textarea name="details" class="form-control" required=""></textarea>
+                  <textarea name="details" id="details" class="form-control" required=""></textarea>
                   <div class="invalid-feedback">
                      Enter details
                   </div>
@@ -187,7 +195,7 @@
             <div class="col-md-6">
                <div class="form-group mb-0">
                   <label>Parish in Uk</label>
-                  <textarea name="details2" class="form-control" required=""></textarea>
+                  <textarea name="details2" id="details2" class="form-control" required=""></textarea>
                   <div class="invalid-feedback">
                      Enter details
                   </div>
@@ -198,7 +206,7 @@
         
 
          <div class="card-footer text-right">
-            <button class="btn btn-primary">Submit</button>
+            <button id="pro_button" class="btn btn-primary ">Submit</button>
          </div>
       </div>
    </form>
@@ -224,7 +232,7 @@
            if(x < maxField){ 
                x++; //Increment field counter
                
-               $(wrapper).append('<div id="'+a+'" style="margin-top:20px;margin-bottom:20px;">  <div class="row" style="margin-top:40px;"> <div class="col-md-4"> <div class="form-group"> <label>Name</label> <div class="input-group"> <input required="" name="family_name[]" type="text" class="form-control"> </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Relationship</label> <input name="family_relationship[]" type="text" class="form-control"> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Phone Number</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-phone"></i> </div> </div> <input name="family_number[]" type="text" class="form-control phone-number"> </div> </div> </div> </div> <div class="row"> <div class="col-md-4"> <div class="form-group"> <label>Email Id</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-envelope"></i> </div> </div> <input name="family_email[]" type="text" class="form-control" > </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Alakal Member</label> <select name="alakal_member[]" class="input-group-text" id="inputGroupSelect05"> <option value="Yes"> Yes</option> <option value="No"> No</option> </select> </div> </div> <div class="col-md-4" style="margin-top:35px;"> <div class="button remove_button"> <a href="javascript:void(0);" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a> </div> </div> </div></div>'); //Add field html
+               $(wrapper).append('<div id="'+a+'" style="margin-top:20px;margin-bottom:20px;">  <div class="row" style="margin-top:40px;"> <div class="col-md-4"> <div class="form-group"> <label>Name</label> <div class="input-group"> <input required="" name="family_name[]" id="family_name" type="text" class="form-control"> </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Relationship</label> <input required="" name="family_relationship[]" id="family_relationship" type="text" class="form-control"> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Phone Number</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-phone"></i> </div> </div> <input name="family_number[]" type="text" class="form-control phone-number"> </div> </div> </div> </div> <div class="row"> <div class="col-md-4"> <div class="form-group"> <label>Email Id</label> <div class="input-group"> <div class="input-group-prepend"> <div class="input-group-text"> <i class="fas fa-envelope"></i> </div> </div> <input name="family_email[]" type="text" class="form-control" > </div> </div> </div> <div class="col-md-4"> <div class="form-group"> <label>Alakal Member</label> <select name="alakal_member[]" class="input-group-text" id="inputGroupSelect05"> <option value="Yes"> Yes</option> <option value="No"> No</option> </select> </div> </div> <div class="col-md-4" style="margin-top:35px;"> <div class="button remove_button"> <a href="javascript:void(0);" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a> </div> </div> </div></div>'); //Add field html
                a = a+1;
            }
            /*for(var i =0;i<3;i++){
@@ -240,6 +248,25 @@
            x--; //Decrement field counter
            a--;
        });
+
+       $('#pro_button').click(function(){
+         
+         if ($('#mid').val() != "" 
+               && $('#name').val() != ""
+               && $('#age').val() != "" 
+               && $('#phone_number').val() != "" 
+               && $('#whatsapp_number').val() != "" 
+               && $('#family_name').val() != "" 
+               && $('#family_relationship').val() != "" 
+               && $('#donation').val() != ""
+               && $('#details').val() != ""
+               && $('#details2').val() != "") {
+            $("#pro_button").addClass("btn-progress");
+         } else {
+
+         }
+         
+      });
    });
 </script>
 @endonce

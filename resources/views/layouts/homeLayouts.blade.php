@@ -6,6 +6,8 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  
   <title>Alakal </title>
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{asset('assets/css/app.min.css')}}">
@@ -44,7 +46,7 @@
 <body>
   <div class="loader"></div>
   <div id="app">
-    <div class="main-wrapper main-wrapper-1">
+    <div class="main-wrapper main-wrapper-1 " >
       <div class="navbar-bg"></div>
       <nav class="navbar navbar-expand-lg main-navbar sticky">
         <div class="form-inline mr-auto">
@@ -98,7 +100,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          <a style="text-transform: capitalize;font-size:13px;" href="tinos.co.in">All Rights are Reserved Under Alakal. Powered by Tinos Security And Solution</a></a>
+          <a style="text-transform: capitalize;font-size:13px;" target="blank" href="https://tinos.co.in">All Rights are Reserved Under Alakal. Powered by Tinos Security And Solution</a>
         </div>
         <div class="footer-right">
         </div>
