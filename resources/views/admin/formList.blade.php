@@ -17,6 +17,14 @@
 
   }
 
+  .close_button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 10px;
+    padding-left: 8px;
+  }
+
 
 </style>
     <section class="section" >
@@ -59,7 +67,7 @@
                           <div class="dropdown">
                           <a href="#" data-toggle="dropdown" class="btn btn-warning dropdown-toggle">Options</a>
                           <div class="dropdown-menu">
-                            <a onclick="togglePopup({{$items->id}})" class="dropdown-item has-icon"><i class="fas fa-plus"></i> Add</a>
+                            <a href="#" onclick="togglePopup({{$items->id}})" class="dropdown-item has-icon"><i class="fas fa-plus"></i> Add</a>
                             <a href="{{url('formFullView/'.$items->id)}}" class="dropdown-item has-icon"><i class="fas fa-eye"></i> View</a>
                             <a href="{{url('formListEdit/'.$items->id)}}" class="dropdown-item has-icon"><i class="far fa-edit"></i> Edit</a>
                             <div class="dropdown-divider"></div>
@@ -87,6 +95,9 @@
             <div class="card">
               <div class="card-header">
                 <h4>Add Contribution</h4>
+                <div class="close_button">
+                  <a href="#" onclick="togglePopup2()" ><i class="fas fa-times"></i></a>
+                </div>
               </div>
               <div class="card-body">
                 <div class="row" style="margin-top:40px;">
@@ -164,6 +175,9 @@
         function togglePopup(id) {
             $(".popup_style").toggle();
             time_id = id;
+        }
+        function togglePopup2() {
+            $(".popup_style").toggle();
         }
     
         jQuery('#frm').submit(function(e){
